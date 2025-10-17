@@ -20,7 +20,7 @@
 
 2. Install the required packages:
    ```bash
-   pip install Flask Pillow pytesseract
+   pip install Flask Pillow pytesseract cairosvg
    ```
 
 3. Run the application:
