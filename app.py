@@ -63,6 +63,20 @@ def logout():
     session.pop('user_id', None)
     return redirect(url_for('login'))
 
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    user_id = session.get('user_id')
+    if not user_id:
+        return redirect(url_for('login'))
+    user = User.query.get(user_id)
+    if request.method == 'POST':
+        username = request.form['username']
+        if username:
+            user.username = username
+        db.session.commit()
+        return redirect(url_for('profile'))
+    return render_template('profile.html', user=user)
+
 @app.route('/audio', methods=['POST'])
 def handle_audio():
     audio_data = request.files['file']
