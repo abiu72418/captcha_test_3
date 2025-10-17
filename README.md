@@ -1,1 +1,42 @@
 # captcha_test_3
+
+## Overview
+
+`captcha_test_3` is a simple web application that solves CAPTCHAs by processing image URLs provided as query parameters. The application defaults to a sample CAPTCHA image if no URL is provided.
+
+## Features
+- Displays CAPTCHA image from a provided URL.
+- Solves the CAPTCHA and displays the solved text within 15 seconds.
+- Default to a sample CAPTCHA image if no URL is specified.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/captcha_test_3.git
+   cd captcha_test_3
+   ```
+
+2. Install the required packages:
+   ```bash
+   pip install Flask Pillow pytesseract
+   ```
+
+3. Run the application:
+   ```bash
+   python app.py
+   ```
+
+4. Open your browser and navigate to `http://127.0.0.1:5000/?url=<your_image_url>`.
+
+## Usage
+
+To use the application, simply provide a URL to a CAPTCHA image as a query parameter. For example:
+```
+http://127.0.0.1:5000/?url=https://example.com/captcha.png
+```
+If no URL is provided, the application will use a default sample CAPTCHA image.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
