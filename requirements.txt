@@ -2,3 +2,5 @@ Flask
 Pillow
 pytesseract
 requests
+Flask-SQLAlchemy
+Werkzeug
