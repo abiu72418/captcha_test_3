@@ -8,6 +8,7 @@
 - Displays CAPTCHA image from a provided URL.
 - Solves the CAPTCHA and displays the solved text within 15 seconds.
 - Default to a sample CAPTCHA image if no URL is specified.
+- Supports handling of SVG images in addition to PNG and other formats.
 
 ## Installation
 
@@ -36,6 +37,11 @@ To use the application, simply provide a URL to a CAPTCHA image as a query param
 http://127.0.0.1:5000/?url=https://example.com/captcha.png
 ```
 If no URL is provided, the application will use a default sample CAPTCHA image.
+
+You can also use SVG images by providing a URL to an SVG file:
+```
+http://127.0.0.1:5000/?url=https://example.com/captcha.svg
+```
 
 ## License
 
