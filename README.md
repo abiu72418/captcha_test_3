@@ -9,6 +9,7 @@
 - Solves the CAPTCHA and displays the solved text within 15 seconds.
 - Default to a sample CAPTCHA image if no URL is specified.
 - Supports handling of SVG images in addition to PNG and other formats.
+- Supports audio CAPTCHA formats for enhanced accessibility.
 
 ## Installation
 
@@ -20,7 +21,7 @@
 
 2. Install the required packages:
    ```bash
-   pip install Flask Pillow pytesseract cairosvg
+   pip install Flask Pillow pytesseract
    ```
 
 3. Run the application:
@@ -41,6 +42,11 @@ If no URL is provided, the application will use a default sample CAPTCHA image.
 You can also use SVG images by providing a URL to an SVG file:
 ```
 http://127.0.0.1:5000/?url=https://example.com/captcha.svg
+```
+
+Additionally, the application now supports audio CAPTCHA formats. You can provide a URL to an audio CAPTCHA file:
+```
+http://127.0.0.1:5000/?url=https://example.com/captcha.mp3
 ```
 
 ## License
