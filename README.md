@@ -11,6 +11,7 @@
 - Supports handling of SVG images in addition to PNG and other formats.
 - Supports audio CAPTCHA formats for enhanced accessibility.
 - User registration and login functionality with a database.
+- User profile management to update necessary information.
 
 ## Installation
 
