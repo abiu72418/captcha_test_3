@@ -10,6 +10,7 @@
 - Default to a sample CAPTCHA image if no URL is specified.
 - Supports handling of SVG images in addition to PNG and other formats.
 - Supports audio CAPTCHA formats for enhanced accessibility.
+- User registration and login functionality with a database.
 
 ## Installation
 
@@ -21,7 +22,7 @@
 
 2. Install the required packages:
    ```bash
-   pip install Flask Pillow pytesseract
+   pip install Flask Pillow pytesseract Flask-SQLAlchemy Werkzeug
    ```
 
 3. Run the application:
