@@ -4,6 +4,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 import base64
+import cairosvg
 
 app = Flask(__name__)
 
@@ -15,6 +16,11 @@ def index():
     if url.startswith('data:image/png;base64,'):
         image_data = url.split(',')[1]
         image = Image.open(BytesIO(base64.b64decode(image_data)))
+    elif url.endswith('.svg'):
+        response = requests.get(url)
+        svg_data = response.content
+        png_data = cairosvg.svg2png(bytestring=svg_data)
+        image = Image.open(BytesIO(png_data))
     else:
         response = requests.get(url)
         image = Image.open(BytesIO(response.content))
