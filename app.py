@@ -15,15 +15,18 @@ def index():
     if url.startswith('data:image/png;base64,'):
         image_data = url.split(',')[1]
         image = Image.open(BytesIO(base64.b64decode(image_data)))
-    elif url.endswith('.mp3') or url.endswith('.wav'):
-        # Handle audio CAPTCHA formats (this is a placeholder for actual audio processing)
-        return render_template('index.html', captcha_url=url, captcha_text='Audio CAPTCHA processing not implemented.')
     else:
         response = requests.get(url)
         image = Image.open(BytesIO(response.content))
 
     captcha_text = pytesseract.image_to_string(image)
     return render_template('index.html', captcha_url=url, captcha_text=captcha_text)
+
+@app.route('/audio', methods=['POST'])
+def handle_audio():
+    audio_data = request.files['file']
+    # Process the audio file as needed
+    return 'Audio file received', 200
 
 if __name__ == '__main__':
     app.run(debug=True)
