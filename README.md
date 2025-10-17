@@ -51,8 +51,11 @@ Additionally, the application now supports audio CAPTCHA formats. You can provid
 http://127.0.0.1:5000/?url=https://example.com/captcha.mp3
 ```
 
+## New Route
+
+The application now includes a new route:
+- `/home`: This route serves as the main entry point for the application.
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-heelo
